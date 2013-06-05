@@ -27,6 +27,8 @@ module CarrierWave
             record.update_attribute :"#{column}_processing", nil
           end
         end
+      rescue NoMethodError
+        # fail silently when no file
       end
 
       private
